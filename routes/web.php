@@ -9,25 +9,25 @@
 
 
 Route::get('/', function () {
-    return view('line_chart');
+    return view('charts.line_chart');
 });
 
 Route::get('/column_chart', function () {
-    return view('column_chart');
+    return view('charts.column_chart');
 });
 
 Route::get('/pie_chart', function () {
-    return view('pie_chart');
+    return view('charts.pie_chart');
 });
 
 Route::get('/stacked_column_chart', function () {
-    return view('stacked_column_chart');
+    return view('charts.stacked_column_chart');
 });
 
 Route::get('/100_pct_stacked_column_chart', function () {
-    return view('100_pct_stacked_column_chart');
+    return view('charts.100_pct_stacked_column_chart');
 });
 
 Route::get('/combo_chart', function () {
-    return view('combo_chart');
-});
+    return view('charts.combo_chart');
+})->name('combo_chart');
