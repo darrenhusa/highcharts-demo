@@ -32,12 +32,12 @@
         </button>
         </div>
         <nav :class="{'block': open, 'hidden': !open}" class="flex-grow md:block px-4 pb-4 md:pb-0 md:overflow-y-auto">
-        <x-nav-link href="/" class="{{ Request::path() == '/' ? 'bg-gray-200' : 'bg-transparent'}}">Line Chart</x-nav-link>
-        <x-nav-link href="column_chart" class="{{ Request::path() == 'column_chart' ? 'bg-gray-200' : 'bg-transparent'}}">Column Chart</x-nav-link>
-        <x-nav-link href="pie_chart" class="{{ Request::path() == 'pie_chart' ? 'bg-gray-200' : 'bg-transparent'}}">Pie Chart</x-nav-link>
-        <x-nav-link href="stacked_column_chart" class="{{ Request::path() == 'stacked_column_chart' ? 'bg-gray-200' : 'bg-transparent'}}">Stacked Column Chart Chart</x-nav-link>            
-        <x-nav-link href="100_pct_stacked_column_chart" class="{{ Request::path() == '100_pct_stacked_column_chart' ? 'bg-gray-200' : 'bg-transparent'}}">100% Stacked Column Chart</x-nav-link>                        
-        <x-nav-link href="combo_chart" class="{{ Request::path() == 'combo_chart' ? 'bg-gray-200' : 'bg-transparent'}}">Combo Chart</x-nav-link>                                    
+        <x-nav-link href="/" :active="request()->is('/')">Line Chart</x-nav-link>
+        <x-nav-link href="column_chart" :active="request()->is('column_chart')">Column Chart</x-nav-link>
+        <x-nav-link href="pie_chart" :active="request()->is('pie_chart')">Pie Chart</x-nav-link>
+        <x-nav-link href="stacked_column_chart" :active="request()->is('stacked_column_chart')">Stacked Column Chart Chart</x-nav-link>            
+        <x-nav-link href="100_pct_stacked_column_chart" :active="request()->is('100_pct_stacked_column_chart')">100% Stacked Column Chart</x-nav-link>                        
+        <x-nav-link href="combo_chart" :active="request()->is('combo_chart')">Combo Chart</x-nav-link>                                    
             
             <div @click.away="open = false" class="relative" x-data="{ open: false }">
                 <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
@@ -47,9 +47,8 @@
                     <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg">
                     <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
                         <x-dropdown-link href="/">Line Chart</x-dropdown-link>
-
-                        <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="column_chart">Column Chart</a>
-                        <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #3</a>
+                        <x-dropdown-link href="column_chart">Column Chart</x-dropdown-link>
+                        <x-dropdown-link href="#">Link #3</x-dropdown-link>
                     </div>
                     </div>
                 </div>
