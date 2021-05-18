@@ -1,36 +1,25 @@
 var myResult = JSON.parse(window.count);
-
+// alert(myResult)
+// alert(myResult[1][0])
+// alert(myResult[0][0], myResult[1][0])
 Highcharts.chart('container', {
   chart: {
     type: 'column'
   },
   title: {
-    text: 'Monthly Average Rainfall'
+    text: myResult[2][0]
   },
   subtitle: {
-    text: 'Source: WorldClimate.com'
+    text: myResult[2][1]
   },
   xAxis: {
-    categories: [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec'
-    ],
+    categories: myResult[3],
     crosshair: true
   },
   yAxis: {
     min: 0,
     title: {
-      text: 'Rainfall (mm)'
+      text: myResult[2][2]
     }
   },
   tooltip: {
@@ -48,16 +37,16 @@ Highcharts.chart('container', {
     }
   },
   series: [{
-    name: 'Tokyo',
-    data: myResult[0]
+    name: myResult[0][0],
+    data: myResult[1][0]
   }, {
-    name: 'New York',
-    data: myResult[1]
+    name: myResult[0][1],
+    data: myResult[1][1]
   }, {
-    name: 'London',
-    data: myResult[2]
+    name: myResult[0][2],
+    data: myResult[1][2]
   }, {
-    name: 'Berlin',
-    data: myResult[3]
+    name: myResult[0][3],
+    data: myResult[1][3]
   }]
 });
