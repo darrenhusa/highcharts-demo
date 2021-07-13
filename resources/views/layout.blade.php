@@ -7,11 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/series-label.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
+    <!-- <script src="https://code.highcharts.com/modules/series-label.js"></script> -->
+    <!-- <script src="https://code.highcharts.com/modules/exporting.js"></script> -->
+    <!-- <script src="https://code.highcharts.com/modules/export-data.js"></script> -->
+    <!-- <script src="https://code.highcharts.com/modules/accessibility.js"></script> -->
+    <script src="/js/highcharts.js"></script>
 
     @yield('head')
 </head>
