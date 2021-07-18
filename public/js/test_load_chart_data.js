@@ -1,4 +1,5 @@
-var myResult = JSON.parse(window.count);
+var myResult = JSON.parse(result);
+// var myResult = JSON.parse(window.count);
 // alert(myResult)
 // alert(myResult[1][0])
 // alert(myResult[0][0], myResult[1][0])
@@ -7,19 +8,19 @@ Highcharts.chart('container', {
     type: 'column'
   },
   title: {
-    text: myResult[2][0]
+    text: myResult.title
   },
   subtitle: {
-    text: myResult[2][1]
+    text: myResult.subtitle
   },
   xAxis: {
-    categories: myResult[3],
+    categories: myResult.categories,
     crosshair: true
   },
   yAxis: {
     min: 0,
     title: {
-      text: myResult[2][2]
+      text: myResult.y_axis
     }
   },
   tooltip: {
@@ -37,16 +38,20 @@ Highcharts.chart('container', {
     }
   },
   series: [{
-    name: myResult[0][0],
-    data: myResult[1][0]
-  }, {
-    name: myResult[0][1],
-    data: myResult[1][1]
-  }, {
-    name: myResult[0][2],
-    data: myResult[1][2]
-  }, {
-    name: myResult[0][3],
-    data: myResult[1][3]
-  }]
+    name: myResult.names[0],
+    data: myResult.data[0]
+  },
+  {
+    name: myResult.names[1],
+    data: myResult.data[1]
+  },
+  {
+    name: myResult.names[2],
+    data: myResult.data[2]
+  },
+  {
+    name: myResult.names[3],
+    data: myResult.data[3]
+  }
+]
 });
